@@ -5,6 +5,10 @@
 #include <sstream>
 #include <cstring>
 
+#ifdef _DEBUG
+
+#endif
+
 using namespace std;
 
 struct STUDENT_DATA
@@ -37,6 +41,12 @@ int main()
             names.push_back(SD);
         }
         myfile.close();
+    #ifdef _DEBUG
+        for (int i = 0; i < names.size(); i++)
+        {
+            cout << names.at(i).firstName << " " << names.at(i).lastName << endl;
+        }
+    #endif#
     }
     else
     {
